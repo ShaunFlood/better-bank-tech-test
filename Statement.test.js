@@ -24,4 +24,13 @@ describe('Statment functionality', () => {
         const currentDate = new Date().toLocaleDateString();
         expect(console.log).toHaveBeenCalledWith(`${currentDate} || || 200.00 || 200.00`);
     });
+    it('When we try to print out a transaction thats a deposit it does not show a in the credit', () => {
+        const account = new BankAccount();
+        account.deposit(200);
+        const statement = new Statement(account);
+        console.log = jest.fn();
+        statement.printStatement();
+        const currentDate = new Date().toLocaleDateString();
+        expect(console.log).toHaveBeenCalledWith(`${currentDate} || 200.00 || || 200.00`);
+    });
 });
