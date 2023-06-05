@@ -14,8 +14,9 @@ describe('Statement functionality', () => {
         const logSpy = jest.spyOn(console, 'log').mockImplementation();
         statement.printStatement();
         expect(logSpy).toHaveBeenCalledWith('date || credit || debit || balance');
+        logSpy.mockRestore();
     });
-    it('When we try to print out a transaction that is a withdrawal, it should not show any credit', () => {
+    it('When we try to print out a transaction that is a deposit, it should not show any credit', () => {
         const account = new BankAccount();
         const statement = new Statement(account)
         const logSpy = jest.spyOn(console, 'log').mockImplementation(); 
@@ -23,6 +24,16 @@ describe('Statement functionality', () => {
         statement.printStatement();
         expect(logSpy).toHaveBeenCalledWith('date || credit || debit || balance');
         expect(logSpy).toHaveBeenCalledWith(`${new Date().toLocaleDateString()} || 1000.00 ||  || 1000.00`);
+        logSpy.mockRestore();
     });
-
+    it('When we try to print out a transaction that is a withdrawal, it should not show any debit', () => {
+    const account = new BankAccount();
+        const statement = new Statement(account)
+        const logSpy = jest.spyOn(console, 'log').mockImplementation();
+        account.balance = 5000;
+        account.withdraw(2000)
+        statement.printStatement();
+        expect(logSpy).toHaveBeenCalledWith('date || credit || debit || balance');
+        expect(logSpy).toHaveBeenCalledWith(`${new Date().toLocaleDateString()} ||  || 2000.00 || 3000.00`);
+    })
 });
