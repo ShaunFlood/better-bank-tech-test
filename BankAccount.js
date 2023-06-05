@@ -7,8 +7,11 @@ class BankAccount {
         return this.balance
     }
     deposit(number) {
-        if (number <= 0)
+        if (number <= 0) {
             throw new Error('Invalid deposit amount')
+        }
+        const transaction = { type: 'credit', number}
+        this.transaction.push(transaction)
         this.balance += number;
     }
     withdraw(number) {
