@@ -26,4 +26,10 @@ const BankAccount = require ('./BankAccount.js')
             account.withdraw(300)
             expect(account.getBalance()).toBe(200)
         })
+        it('When we try to withdraw a negative number, then throw an error', () => {
+            account = new BankAccount();
+            expect(() => {
+                account.withdraw(-1000);
+            }).toThrow('Invalid withdrawal amount');
+        })
     })
