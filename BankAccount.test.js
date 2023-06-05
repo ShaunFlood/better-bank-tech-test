@@ -27,6 +27,13 @@ const BankAccount = require ('./BankAccount.js')
             account.deposit(1000)
             expect(account.transaction.map(t => t.balance)).toContain(1000)
         })
+        it('When we do a withdrawal should send hte infromation of the type of credit to the array and the value amount', () => {
+            account = new BankAccount();
+            account.deposit(1000)
+            account.withdraw(500)
+            expect(account.transaction.map(t => t.number)).toContain(500)
+            expect(account.transaction.map(t => t.type)).toContain('debt')
+        })
     })
     describe('Deposit functionality on bank account', () => {
         it('When we deposit money the balance increase', () => {
