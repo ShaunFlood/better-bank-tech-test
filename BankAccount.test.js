@@ -40,6 +40,13 @@ const BankAccount = require ('./BankAccount.js')
             account.withdraw(500)
             expect(account.transaction.map(t => t.date)).toContainEqual(new Date().toLocaleDateString())
         })
+        it('When we do a withdrawal should send the information of the balance to the array', () => {
+            account = new BankAccount();
+            account.balance = 1000
+            account.withdraw(500)
+            expect(account.transaction.map(t => t.balance)).toContain(500)
+
+        })
     })
     describe('Deposit functionality on bank account', () => {
         it('When we deposit money the balance increase', () => {
