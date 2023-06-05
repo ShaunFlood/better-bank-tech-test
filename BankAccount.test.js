@@ -20,7 +20,7 @@ const BankAccount = require ('./BankAccount.js')
         it('When we do a deposit it should contain the current date', () => {
             account = new BankAccount();
             account.deposit(1000)
-            expect(account.transaction.map(t => t.date)).toContainEqual(new Date())
+            expect(account.transaction.map(t => t.date)).toContainEqual(new Date().toLocaleDateString())
         })
         it('When we do a deposit it should contain the current balance', () => {
             account = new BankAccount();
@@ -38,7 +38,7 @@ const BankAccount = require ('./BankAccount.js')
             account = new BankAccount();
             account.balance = 1000
             account.withdraw(500)
-            expect(account.transaction.map(t => t.date)).toContainEqual(new Date())
+            expect(account.transaction.map(t => t.date)).toContainEqual(new Date().toLocaleDateString())
         })
     })
     describe('Deposit functionality on bank account', () => {

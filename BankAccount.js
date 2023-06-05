@@ -11,7 +11,7 @@ class BankAccount {
             throw new Error('Invalid deposit amount')
         }
         this.balance += number;
-        const transaction = { date: new Date(), type: 'credit', number, balance: this.balance}
+        const transaction = { date: new Date().toLocaleDateString(), type: 'credit', number, balance: this.balance}
         this.transaction.push(transaction)
         
     }
@@ -20,7 +20,7 @@ class BankAccount {
             throw new Error('Invalid withdrawal amount')
         }
         this.balance -= number;
-        const transaction = { type: 'debt', number }
+        const transaction = { date: new Date().toLocaleDateString(), type: 'debt', number }
         this.transaction.push(transaction)
     }
 }
