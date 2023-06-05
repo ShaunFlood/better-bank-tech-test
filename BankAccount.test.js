@@ -7,7 +7,7 @@ const BankAccount = require ('./BankAccount.js')
         })
         it('It should have an attempty array for a transaction', () => {
             account = new BankAccount();
-            expect(account.transaction).toEq([])
+            expect(account.transaction).toEqual([])
         })
     })
     describe('Deposit functionality on bank account', () => {
