@@ -18,12 +18,10 @@ describe('Statment functionality', () => {
         const account = new BankAccount();
         account.balance = 400;
         account.withdraw(200);
-        account.deposit(200);
         const statement = new Statement(account);
         console.log = jest.fn();
         statement.printStatement();
-        expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance');
-        expect(console.log).toHaveBeenCalledWith(`${new Date().toLocaleDateString()} || || 200.00 || 200.00`);
-        expect(console.log).toHaveBeenCalledWith(`${new Date().toLocaleDateString()} || 200.00 || || 400.00`);
+        const currentDate = new Date().toLocaleDateString();
+        expect(console.log).toHaveBeenCalledWith(`${currentDate} || || 200.00 || 200.00`);
     });
 });

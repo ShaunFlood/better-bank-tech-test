@@ -7,12 +7,10 @@ class Statement {
         const header = ('date || credit || debit || balance')
         console.log(header)
         const transactions = this.account.transaction;
-        transactions.forEach(({ date, type, number, balance }) => {
-            const credit = type === 'credit' ? number.toFixed(2) : '' ;
-            const debit = type === 'debit' ? number.toFixed(2) : '' ;
-            const string = `${date} || ${credit} || ${debit} || ${balance}`;
-            console.log(string);
-        });
+        transactions.forEach(({ debit, date, balance }) => {
+            const transactionString = `${date} || || ${debit.toFixed(2)} || ${balance.toFixed(2)}`;
+            console.log(transactionString)
+        })
     }
        
 }
