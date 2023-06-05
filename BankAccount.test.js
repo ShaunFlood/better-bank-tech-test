@@ -10,6 +10,14 @@ const BankAccount = require ('./BankAccount.js')
             expect(account.transaction).toEqual([])
         })
     })
+    describe('Transaction functionality', () => {
+        it('When we do a deposit should send the information of the type of debt to the array and the value amount', () => {
+            account = new BankAccount();
+            account.deposit(1000)
+            expect(account.transaction.map(t => t.number)).toContain(1000)
+            expect(account.transaction.map(t => t.type)).toContain('credit')
+        })
+    })
     describe('Deposit functionality on bank account', () => {
         it('When we deposit money the balance increase', () => {
             account = new BankAccount();
