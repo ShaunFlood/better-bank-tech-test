@@ -12,6 +12,12 @@ const BankAccount = require ('./BankAccount.js')
             account.deposit(500);
             expect(account.getBalance()).toBe(500)
         })
+        it('When we try to deposit a negative number, then throw an error', () => {
+            account = new BankAccount();
+            expect(() => {
+                account.deposit(-500);
+            }).toThrow('Invalid deposit amount');
+        })
     })
     describe('Withdrawing funcationality on bank account', () => {
         it('When we withdraw money the balance decreases', () => {
