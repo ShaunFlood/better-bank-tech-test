@@ -11,6 +11,8 @@ class BankAccount {
         this.balance += number;
     }
     withdraw(number) {
+        if (number <= 0)
+            throw new Error('Invalid withdrawal amount')
         this.balance -= number;
     }
 }
