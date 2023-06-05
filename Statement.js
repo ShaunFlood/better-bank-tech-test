@@ -6,6 +6,8 @@ class Statement {
     printStatement() {
         const header = ('date || credit || debit || balance')
         console.log(header)
+    
+
     }
 }
 

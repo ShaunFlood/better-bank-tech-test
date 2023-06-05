@@ -11,7 +11,7 @@ const BankAccount = require('./BankAccount.js')
         })
     })
     describe('Transaction functionality', () => {
-        it('When we do a deposit should send the information of the type of debt to the array and the value amount', () => {
+        it('When we do a deposit should send the information of the type of debit to the array and the value amount', () => {
             account = new BankAccount();
             account.deposit(1000)
             expect(account.transaction.map(t => t.number)).toContain(1000)
@@ -32,7 +32,7 @@ const BankAccount = require('./BankAccount.js')
             account.deposit(1000)
             account.withdraw(500)
             expect(account.transaction.map(t => t.number)).toContain(500)
-            expect(account.transaction.map(t => t.type)).toContain('debt')
+            expect(account.transaction.map(t => t.type)).toContain('debit')
         })
         it('When we do a withdrawal should send the infromation of the date to the array', () => {
             account = new BankAccount();
