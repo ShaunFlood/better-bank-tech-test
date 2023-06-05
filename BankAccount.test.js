@@ -32,4 +32,11 @@ const BankAccount = require ('./BankAccount.js')
                 account.withdraw(-1000);
             }).toThrow('Invalid withdrawal amount');
         })
+        it('When we try to withdraw a number more than the balance, then throw an error', () => {
+            account = new BankAccount();
+            account.deposit(500)
+            expect(() => {
+                account.withdraw(600);
+            }).toThrow('Invalid withdrawal amount')
+        })
     })
