@@ -2,8 +2,12 @@ const BankAccount = require ('./BankAccount.js')
 
     describe('Bank account functionality', () => {
         it('When we check the balance it should return 0', () => {
-        account = new BankAccount();
-        expect(account.getBalance()).toBe(0);
+            account = new BankAccount();
+            expect(account.getBalance()).toBe(0);
+        })
+        it('It should have an attempty array for a transaction', () => {
+            account = new BankAccount();
+            expect(account.transaction).toEq([])
         })
     })
     describe('Deposit functionality on bank account', () => {
