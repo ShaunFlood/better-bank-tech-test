@@ -15,13 +15,15 @@ describe('Statment functionality', () => {
         expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance');
     })
     it('When we try to print out a transaction thats a withdrawal it does not show a in the debt', () => {
-        const account = new BankAccount()
-        account.balance = 400
-        account.withdraw(200)
-        const statement = new Statement(account)
+        const account = new BankAccount();
+        account.balance = 400;
+        account.withdraw(200);
+        account.deposit(200);
+        const statement = new Statement(account);
         console.log = jest.fn();
         statement.printStatement();
         expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance');
-        expect(console.log).toHaveBeenCalledWith(`${new Date().toLocaleDateString()} || || 200 || 200`)
+        expect(console.log).toHaveBeenCalledWith(`${new Date().toLocaleDateString()} || || 200.00 || 200.00`);
+        expect(console.log).toHaveBeenCalledWith(`${new Date().toLocaleDateString()} || 200.00 || || 400.00`);
     });
 });
