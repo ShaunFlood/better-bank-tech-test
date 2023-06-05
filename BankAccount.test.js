@@ -6,3 +6,10 @@ const BankAccount = require ('./BankAccount.js')
         expect(account.getBalance()).toBe(0);
         })
     })
+    describe('Deposit functionality on bank account', () => {
+        it('When we deposit money the balance increase', () => {
+            account = new BankAccount();
+            account.deposit(500);
+            expect(account.getBalance()).toBe(500)
+        })
+    })
