@@ -22,6 +22,11 @@ const BankAccount = require ('./BankAccount.js')
             account.deposit(1000)
             expect(account.transaction.map(t => t.date)).toContainEqual(new Date())
         })
+        it('When we do a deposit it should contain the current balance', () => {
+            account = new BankAccount();
+            account.deposit(1000)
+            expect(account.transaction.map(t => t.balance)).toContain(1000)
+        })
     })
     describe('Deposit functionality on bank account', () => {
         it('When we deposit money the balance increase', () => {
