@@ -1,36 +1,28 @@
 const Statement = require('./Statement.js')
 const BankAccount = require('./BankAccount.js')
 
-describe('Statment functionality', () => {
-    it('When we add an account it should have one within the statment', () => {
+describe('Statement functionality', () => {
+    it('When we add an account it should have one within the statement', () => {
         const account = new BankAccount()
         const statement = new Statement(account)
         expect(statement.account).toBe(account)
     })
+
     it('When we try to print the statement it should show the header', () => {
         const account = new BankAccount()
         const statement = new Statement(account)
-        console.log = jest.fn();
+        const logSpy = jest.spyOn(console, 'log').mockImplementation();
         statement.printStatement();
-        expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance');
-    })
-    it('When we try to print out a transaction thats a withdrawal it does not show a in the debt', () => {
-        const account = new BankAccount();
-        account.balance = 400;
-        account.withdraw(200);
-        const statement = new Statement(account);
-        console.log = jest.fn();
-        statement.printStatement();
-        const currentDate = new Date().toLocaleDateString();
-        expect(console.log).toHaveBeenCalledWith(`${currentDate} || || 200.00 || 200.00`);
+        expect(logSpy).toHaveBeenCalledWith('date || credit || debit || balance');
     });
-    it('When we try to print out a transaction thats a deposit it does not show a in the credit', () => {
+    it('When we try to print out a transaction that is a withdrawal, it should not show any credit', () => {
         const account = new BankAccount();
-        account.deposit(200);
-        const statement = new Statement(account);
-        console.log = jest.fn();
+        const statement = new Statement(account)
+        const logSpy = jest.spyOn(console, 'log').mockImplementation(); 
+        account.deposit(1000)
         statement.printStatement();
-        const currentDate = new Date().toLocaleDateString();
-        expect(console.log).toHaveBeenCalledWith(`${currentDate} || 200.00 || || 200.00`);
+        expect(logSpy).toHaveBeenCalledWith('date || credit || debit || balance');
+        expect(logSpy).toHaveBeenCalledWith(`${new Date().toLocaleDateString()} || 1000.00 ||  || 1000.00`);
     });
+
 });
