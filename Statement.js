@@ -8,7 +8,7 @@ class Statement {
         console.log(header)
         const transactions = this.account.transaction;
         transactions.forEach(({ debit, date, balance }) => {
-            const transactionString = `${date} || || ${debit.toFixed(2)} || ${balance.toFixed(2)}`;
+            const transactionString = `${date} || || ${debit ? debit.toFixed(2) : ''} || ${balance.toFixed(2)}`;
             console.log(transactionString)
         })
     }
