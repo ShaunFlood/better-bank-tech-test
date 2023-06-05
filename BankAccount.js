@@ -25,4 +25,4 @@ class BankAccount {
     }
 }
 
-module.exports = BankAccount
+module.exports = BankAccount;

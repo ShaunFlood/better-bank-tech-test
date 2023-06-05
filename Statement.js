@@ -1,8 +1,8 @@
 class Statement {
-    constructor(account){
+    constructor(account) {
         this.account = account
     }
 }
 
 
-module.exports = BankAccount
+module.exports = Statement

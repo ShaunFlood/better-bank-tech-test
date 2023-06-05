@@ -1,4 +1,4 @@
-const BankAccount = require ('./BankAccount.js')
+const BankAccount = require('./BankAccount.js')
 
     describe('Bank account functionality', () => {
         it('When we check the balance it should return 0', () => {
