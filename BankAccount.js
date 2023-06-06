@@ -7,7 +7,7 @@ class BankAccount {
         return this.balance
     }
     deposit(number) {
-        if (number <= 0) {
+        if (number <= 0 || number >= 10000) {
             throw new Error('Invalid deposit amount')
         }
         this.balance += number;
