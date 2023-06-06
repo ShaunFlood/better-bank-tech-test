@@ -13,12 +13,7 @@ Data can be kept in memory (it doesn't need to be stored to a database or anythi
 
 Given a client makes a deposit of 1000 on 10-01-2012 And a deposit of 2000 on 13-01-2012 And a withdrawal of 500 on 14-01-2012 When she prints her bank statement Then she would see:
 
-### Table will look like this
-| date       | credit   | debit   | balance  |
-|------------|----------|---------|----------|
-| 14/01/2012 |          | 500.00  | 2500.00  |
-| 13/01/2012 | 2000.00  |         | 3000.00  |
-| 10/01/2012 | 1000.00  |         | 1000.00  |
+<img width="318" alt="Screenshot 2023-06-06 at 21 03 25" src="https://github.com/ShaunFlood/better-bank-tech-test/assets/117595516/a046753a-d1f9-49b5-8f77-45bd732c367f">
 
 ## Planning 
 
