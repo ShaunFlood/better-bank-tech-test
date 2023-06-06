@@ -60,7 +60,9 @@ All bank account start at a nil balance, so withdrawing when having a nil balanc
     account.getBalance();
 8) You can alter the amount of the balance without the functions like this:
     account.balance = 500, which would make it 500 instead of the starting amount of 0
-###Statement Account functionality (optional)
+    
+### Statement Account functionality (optional)
+
 9) const statement = new Statement(account) 
     this puts the bank account in to the statment generator
 10) statement.printStatement();
