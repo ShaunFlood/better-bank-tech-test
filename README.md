@@ -54,6 +54,8 @@ All bank account start at a nil balance, so withdrawing when having a nil balanc
 8) const statement = new Statement(account) 
     this puts the bank account in to the statment generator
 9) statement.printStatement();
+
+
   this will print the statement in this format:
 =============||=========||========||===========
 date         || credit  || debit  || balance
