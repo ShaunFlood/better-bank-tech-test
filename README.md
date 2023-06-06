@@ -52,6 +52,7 @@ You need to be in the directory of the files for this to work
 ### Bank Account functionality (optional)
 
 All bank account start at a nil balance, so withdrawing when having a nil balance will throw an error
+
 5) To make a deposit you use account.(deposit);
     account.deposit(500) puts 500 in the bank account
 6)To make a deposit you use account.(withdraw);
@@ -65,6 +66,7 @@ All bank account start at a nil balance, so withdrawing when having a nil balanc
 
 9) const statement = new Statement(account) 
     this puts the bank account in to the statment generator
+    
 10) statement.printStatement();
 
 An example of this is below.
