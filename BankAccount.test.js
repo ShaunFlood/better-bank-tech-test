@@ -58,6 +58,12 @@ const BankAccount = require('./BankAccount.js')
                 account.deposit(-500);
             }).toThrow('Invalid deposit amount');
         })
+        it('When we deposit  10000 or more, then throw an error', () => {
+            account = new BankAccount();
+            expect(() => {
+                account.deposit(10000);
+            }).toThrow('Invalid deposit amount')
+        })
     })
     describe('Withdrawing funcationality on bank account', () => {
         it('When we withdraw money the balance decreases', () => {

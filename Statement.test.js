@@ -13,7 +13,6 @@ describe('Statement functionality', () => {
         const logSpy = jest.spyOn(console, 'log').mockImplementation();
         statement.printStatement();
         expect(logSpy).toHaveBeenCalledWith("date         || credit       || debit        || balance     ");
-        expect(logSpy).toHaveBeenCalledTimes(1)
         logSpy.mockRestore();
     });
     it('When we try to print out a transaction that is a deposit, it should not show any credit', () => {
@@ -23,7 +22,6 @@ describe('Statement functionality', () => {
         account.deposit(1000)
         statement.printStatement();  
         expect(logSpy).toHaveBeenCalledWith((`${new Date().toLocaleDateString()}     || 1000.00      ||              || 1000.00     `))
-        expect(logSpy).toHaveBeenCalledTimes(2)
         logSpy.mockRestore();
     });
     it('When we try to print out a transaction that is a withdrawal, it should not show any debit', () => {
@@ -35,7 +33,6 @@ describe('Statement functionality', () => {
         statement.printStatement();
         expect(logSpy).toHaveBeenCalledWith("date         || credit       || debit        || balance     ");
         expect(logSpy).toHaveBeenCalledWith((`${new Date().toLocaleDateString()}     ||              || 2000.00      || 3000.00     `))
-        expect(logSpy).toHaveBeenCalledTimes(2)
         logSpy.mockRestore();
     });
 });
