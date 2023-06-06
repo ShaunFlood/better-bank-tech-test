@@ -44,17 +44,17 @@ In the terminal of the folder input:
 
 You need to be in the directory of the files for this to work
 
-1)node
-2)const BankAccount = require('./BankAccount')
-3)const Statement = require('./Statement')
-4)const account = new BankAccount
+1) node
+2) const BankAccount = require('./BankAccount')
+3) const Statement = require('./Statement')
+4) const account = new BankAccount
 
 ### Bank Account functionality (optional)
 
 All bank account start at a nil balance, so withdrawing when having a nil balance will throw an error
 
 5) To make a deposit you use account.(deposit), which puts money in the account:
-6)To make a withdrawal you use account.(withdraw):, which takes money out of the account
+6) To make a withdrawal you use account.(withdraw):, which takes money out of the account
 7) Check the balance of the account by account.getBalance();
 8) You can alter the amount of the balance without the functions like this:
     account.balance = 500, which would make it 500 instead of the starting amount of 0
