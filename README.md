@@ -53,12 +53,9 @@ You need to be in the directory of the files for this to work
 
 All bank account start at a nil balance, so withdrawing when having a nil balance will throw an error
 
-5) To make a deposit you use account.(deposit);
-    account.deposit(500) puts 500 in the bank account
-6)To make a deposit you use account.(withdraw);
-    account.withdraw(500) puts 500 from the bank account balance.
-7) Check the balance of the account by 
-    account.getBalance();
+5) To make a deposit you use account.(deposit), which puts money in the account:
+6)To make a withdrawal you use account.(withdraw):, which takes money out of the account
+7) Check the balance of the account by account.getBalance();
 8) You can alter the amount of the balance without the functions like this:
     account.balance = 500, which would make it 500 instead of the starting amount of 0
     
