@@ -11,6 +11,7 @@ Data can be kept in memory (it doesn't need to be stored to a database or anythi
 
 ##Acceptance criteria
 
+
 Given a client makes a deposit of 1000 on 10-01-2012 And a deposit of 2000 on 13-01-2012 And a withdrawal of 500 on 14-01-2012 When she prints her bank statement Then she would see:
 date       || credit  || debit  || balance
 14/01/2012 ||         || 500.00 || 2500.00
@@ -25,6 +26,7 @@ I started by doing a simple diagram of how I waned to spilt the functionality be
 
 I've also focused on commiting before every failed test and passed test with commits to keep it consistent with addtional commits if there was a bug or a change needed.
 
+<img width="1440" alt="Screenshot 2023-06-06 at 20 49 13" src="https://github.com/ShaunFlood/better-bank-tech-test/assets/117595516/bd835218-3fc1-418b-b418-54b29f9bc7f7">
 
 ##How to use 
 
@@ -35,6 +37,8 @@ In the terminal of the folder input:
 2) nvm use node
 3) npm install jest
 4) jest - this step is optional if you want to run the test.
+
+<img width="411" alt="Screenshot 2023-06-06 at 19 02 30" src="https://github.com/ShaunFlood/better-bank-tech-test/assets/117595516/c66a8d86-3427-45a8-85f8-becdd764479a">
 
 ###Running the application
 0) You need to be in the directory of the files for this to work
@@ -50,17 +54,12 @@ All bank account start at a nil balance, so withdrawing when having a nil balanc
     account.withdraw(500) puts 500 from the bank account balance.
 7) Check the balance of the account by 
     account.getBalance();
+8) You can alter the amount of the balance without the functions like this:
+    account.balance = 500, which would make it 500 instead of the starting amount of 0
 ###Statement Account functionality (optional)
-8) const statement = new Statement(account) 
+9) const statement = new Statement(account) 
     this puts the bank account in to the statment generator
-9) statement.printStatement();
-
-
-  this will print the statement in this format:
-=============||=========||========||===========
-date         || credit  || debit  || balance
-14/01/2012   ||         || 500.00 || 2500.00
-13/01/2012   || 2000.00 ||        || 3000.00
-10/01/2012   || 1000.00 ||        || 1000.00
-=============||=========||========||===========
+10) statement.printStatement();
+11) An example of this is below.
+<img width="331" alt="Screenshot 2023-06-06 at 20 38 53" src="https://github.com/ShaunFlood/better-bank-tech-test/assets/117595516/b1d48555-1e0c-426a-b611-b8f1720b79d9">
   
