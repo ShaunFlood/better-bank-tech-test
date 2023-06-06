@@ -41,7 +41,7 @@ In the terminal of the folder input:
 <img width="411" alt="Screenshot 2023-06-06 at 19 02 30" src="https://github.com/ShaunFlood/better-bank-tech-test/assets/117595516/c66a8d86-3427-45a8-85f8-becdd764479a">
 
 ###Running the application
-0) You need to be in the directory of the files for this to work
+You need to be in the directory of the files for this to work
 1)node
 2)const BankAccount = require('./BankAccount')
 3)const Statement = require('./Statement')
